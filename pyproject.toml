@@ -1,0 +1,41 @@
+[tool.isort]
+profile = "black"
+line_length = 119
+
+[tool.black]
+line-length = 119
+
+[tool.poetry]
+name = "laf"
+version = "0.1.0"
+description = ""
+authors = ["joisino <joisinoo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = {version = "~2.2.2+cpu", source = "pytorch-cpu"}
+torch-geometric = "^2.5.2"
+matplotlib = "^3.7.2"
+pyg-lib = {version = "^0.4.0+pt22cpu", source = "pyg-cpu"}
+torch-scatter = {version = "^2.1.2+pt22cpu", source = "pyg-cpu"}
+torch-sparse = {version = "^0.6.18+pt22cpu", source = "pyg-cpu"}
+torch-cluster = {version = "^1.6.3+pt22cpu", source = "pyg-cpu"}
+numpy = "<2"
+
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "pyg-cpu"
+url = "https://data.pyg.org/whl/torch-2.2.0+cpu.html"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
